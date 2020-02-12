@@ -1,0 +1,310 @@
+/*
+==============
+CSS for - Responsive Menu jQuery
+Muhammad Adam Firdaus 2016
+http://www.muhammadadamfirdaus.com/
+==============
+ */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, section {
+	display: block;
+}
+
+html, body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+
+body {
+	font-family:"Roboto-Light", arial;
+}
+
+img {
+	display:block;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Roboto-Light";
+}
+
+h1 {
+	font-size:32px;
+}
+
+h2 {
+	font-size: 28px;
+}
+
+h3 {
+	font-size:24px;
+}
+
+h4 {
+	font-size:20px;
+}
+
+h5 {
+	font-size:16px;
+}
+
+h6 {
+	font-size:14px;
+}
+
+/* fonts */
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('fonts/Helvetica.eot?#iefix') format('embedded-opentype'),  url('fonts/Helvetica.otf')  format('opentype'),
+	     url('fonts/Helvetica.woff') format('woff'), url('fonts/Helvetica.ttf')  format('truetype'), url('fonts/Helvetica.svg#Helvetica') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Roboto-Light';
+  src:	url('fonts/Roboto-Light.eot?#iefix') format('embedded-opentype'),
+				url('fonts/Roboto-Light.woff') format('woff'),
+				url('fonts/Roboto-Light.ttf')  format('truetype'),
+				url('fonts/Roboto-Light.svg#Roboto-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src:	url('fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+				url('fonts/Roboto-Bold.woff') format('woff'),
+				url('fonts/Roboto-Bold.ttf') format('truetype'),
+				url('fonts/Roboto-Bold.svg#Roboto-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  width: 1120px;
+	min-height:100%;
+  margin:0 auto;
+	position:relative;
+}
+
+footer {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+}
+
+/*.preload {
+	width:100%;
+	height:100%;
+	position:fixed;
+	background:rgba(0,0,0,0.8);
+}
+
+/* mulai dari bawah ini */
+
+.wrapper {
+	padding:0 20px;
+}
+
+.col,
+nav,
+nav li {
+	float:left;
+}
+
+header,
+nav {
+	width: 100%;
+}
+
+.col {
+	position: relative;
+}
+
+header {
+	height:132px;
+	background: rgb(26,151,222); /* Old browsers */
+	background: -moz-linear-gradient(45deg,  rgba(26,151,222,1) 0%, rgba(220,48,35,1) 100%, rgba(230,81,0,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg,  rgba(26,151,222,1) 0%,rgba(220,48,35,1) 100%,rgba(230,81,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(45deg,  rgba(26,151,222,1) 0%,rgba(220,48,35,1) 100%,rgba(230,81,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a97de', endColorstr='#e65100',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	box-shadow: 5px 5px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+	height:90px;
+}
+
+.header .col {
+	display: table;
+	line-height: 90px;
+	height: 90px;
+}
+
+.header .col:nth-child(1),
+.header .col:nth-child(3) {
+	width:30%;
+}
+
+.header .col:nth-child(2) {
+	width:40%;
+}
+
+.header .col:nth-child(2) img {
+	margin: 0 auto;
+}
+
+.header .col:nth-child(2) a,
+.header .col:nth-child(3) {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.header .col:nth-child(1),
+.header .col:nth-child(2),
+.header .col:nth-child(3) {
+}
+
+.header .col:nth-child(1) a {
+	display: inline-block;
+	padding-right:10px;
+}
+
+.header .col:nth-child(1) a:last-child {
+	padding-right:0;
+}
+
+main {
+	background:#fcfcfc;
+}
+
+section {
+	padding-top:15px;
+}
+
+section:nth-child(1) {
+	margin-bottom:8px;
+}
+
+section:nth-child(1) .wrapper:nth-of-type(1) {
+	padding-right: 0;
+}
+
+footer .totop {
+	display:block;
+	padding:20px 12px 12px 12px;
+	background-color:rgba(0,0,0,0.3);
+	position:absolute;
+	right:20px;
+	bottom:10px;
+	z-index:5;
+}
+
+footer .totop:before {
+	content:'';
+	display:inline-block;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+	background-repeat:no-repeat;
+	-ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+  transform: rotate(90deg);
+	width:32px;
+	height:32px;
+	overflow:hidden;
+}
+
+@media screen and (max-width: 800px) {
+	.container {
+		width: 100%;
+	}
+
+	.header .col img {
+		width: 100%;
+	}
+
+	header,
+	.header {
+		height: 80px;
+	}
+
+	header {
+		position: absolute;
+		top:0;
+		left:0;
+		z-index: 9;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.header .col:nth-child(1) {
+		width:25%;
+	}
+
+	.header .col:nth-child(2) {
+		width:60%;
+	}
+
+	.header .col:nth-child(3) {
+		width: 15%;
+	}
+}
+
+@media screen and (max-width: 385px){
+	header,
+	.header,
+	.header .col {
+		height: 44px;
+	}
+
+	.header .col img {
+		width: 60%;
+	}
+}
